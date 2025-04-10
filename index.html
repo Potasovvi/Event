@@ -12,15 +12,45 @@
         <!-- Implementare i seguenti campi all'interno del form -->
         
         <!-- Nome completo -->
-        <!-- Email -->
-        <!-- Numero di telefono -->
-        <!-- Data di nascita -->
-        <!-- Preferenza di partecipazione (radio button) -->
-        <!-- Lingue preferite (checkbox) -->
-        <!-- Commenti o richieste speciali -->
-        <!-- Checkbox per termini e condizioni -->
-        <!-- Pulsante di invio -->
+        <label for="nome-completo">Nome completo:</label>
+        <input type="text" id="nome-completo" name="nome-completo" required><br><br>
 
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Numero di telefono -->
+        <label for="telefono">Numero di telefono:</label>
+        <input type="tel" id="telefono" name="telefono"><br><br>
+
+        <!-- Data di nascita -->
+        <label for="data-nascita">Data di nascita:</label>
+        <input type="date" id="data-nascita" name="data-nascita"><br><br>
+
+        <!-- Preferenza di partecipazione -->
+        <p>Preferenza di partecipazione:</p>
+        <input type="radio" id="in-presenza" name="partecipazione" value="in-presenza">
+        <label for="in-presenza">In presenza</label><br>
+        <input type="radio" id="online" name="partecipazione" value="online">
+        <label for="online">Online</label><br><br>
+
+        <!-- Lingue preferite -->
+        <p>Lingue preferite:</p>
+        <input type="checkbox" id="italiano" name="lingue" value="italiano">
+        <label for="italiano">Italiano</label><br>
+        <input type="checkbox" id="inglese" name="lingue" value="inglese">
+        <label for="inglese">Inglese</label><br><br>
+
+        <!-- Commenti o richieste speciali -->
+        <label for="commenti">Commenti o richieste speciali:</label><br>
+        <textarea id="commenti" name="commenti" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Checkbox per termini e condizioni -->
+        <input type="checkbox" id="termini" name="termini" required>
+        <label for="termini">Accetto i termini e le condizioni</label><br><br>
+
+        <!-- Pulsante di invio -->
+        <button type="submit">Invia</button>
     </form>
 </body>
 </html>
