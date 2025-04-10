@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Modulo di Registrazione per l'Evento</h1>
-    <form id="EventForm", action="/registrazione" method="POST">
+    <form id="EventForm" action="/registrazione" method="POST">
         <!-- Implementare i seguenti campi all'interno del form -->
         
         <!-- Nome completo -->
@@ -54,7 +54,38 @@
     </form>
     <script>
 
-    <script>    
+        document.getElementById('EventForm').addEventListener('submit', function(e) 
+        {
+            e.preventDefault(); // Evita il comportamento di invio predefinito del form
+
+            // Ottieni i valori di nome e cognome dal form
+            const nome_c = document.getElementById('nome-completo').value;
+            const mail_c = document.getElementById('email').value;
+            
+            // Se vuoi inviare il punteggio a Google Sheets, puoi aggiungerlo nel formData
+            const formData = new FormData();
+            formData.append('nome', nome_c); // Aggiunge il nome 
+            formData.append('mail', mail_c); // Aggiunge la mail            
+		
+            // Invia i dati al Google Sheet (se necessario)
+	        const scriptURL = 'https://script.google.com/macros/s/1Lzt7Qbd8MfitADDMTdvhbASyCBJvk4HmJThqTJPcfu0/exec'
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                console.log('Success!', response);
+		        alert(`Quiz compilato con successo. Hai ottenuto un punteggio di ${punteggio}.`);
+                // Reindirizza alla pagina di ringraziamenti (facoltativo)
+                // window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+            }).catch(error => console.error('Error!', error.message));
+        });
+
+        }
+            
+            
+        
+    </script>    
     
 </body>
 </html>
