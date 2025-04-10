@@ -71,15 +71,16 @@
 	        const scriptURL = 'https://script.google.com/macros/s/1Lzt7Qbd8MfitADDMTdvhbASyCBJvk4HmJThqTJPcfu0/exec'
 
             fetch(scriptURL, {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                console.log('Success!', response);
-		        alert(`Quiz compilato con successo. Hai ottenuto un punteggio di ${punteggio}.`);
-                // Reindirizza alla pagina di ringraziamenti (facoltativo)
-                // window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
-            }).catch(error => console.error('Error!', error.message));
-       // });
+    		method: 'POST',
+    		body: formData
+			     }).then(response => {
+    					console.log('Success!', response);
+    					alert(`Quiz compilato con successo.`);
+    					// Reindirizza alla pagina di ringraziamenti (facoltativo)
+    					// window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+						}).catch(error => {
+		    					console.error('Error!', error.message);
+						});
 
         }
 	    
